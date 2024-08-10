@@ -21,6 +21,9 @@ class _CapturePhotoScreenState extends State<HomeScreen> {
   bool _isLoading = false;
 
   Future<void> _pickImage() async {
+    setState((){
+      _identifiedIngredients = '';
+    });
     final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
     setState(() {
       _imageFile = pickedFile;
@@ -29,6 +32,9 @@ class _CapturePhotoScreenState extends State<HomeScreen> {
   }
 
   Future<void> _capturePhoto() async {
+    setState((){
+      _identifiedIngredients = '';
+    });
     final capturedFile = await _picker.pickImage(source: ImageSource.camera);
     setState(() {
       _imageFile = capturedFile;
@@ -48,7 +54,7 @@ class _CapturePhotoScreenState extends State<HomeScreen> {
 
     gemini.textAndImage(
       text:
-          "What ingredients are in this dish? Give me detailed nutrition information.",
+          "What ingredients are in this dish or in fruit? Give me detailed nutrition information.",
       images: [file.readAsBytesSync()],
     ).then((value) {
       setState(() {
@@ -80,7 +86,7 @@ class _CapturePhotoScreenState extends State<HomeScreen> {
                 SizedBox(
                   height: 400,
                   child: Center(
-                    child: LoadingAnimationWidget.staggeredDotsWave(
+                    child: LoadingAnimationWidget.threeRotatingDots(
                       color: Colors.deepOrange,
                       size: 50,
                     ),
@@ -102,18 +108,23 @@ class _CapturePhotoScreenState extends State<HomeScreen> {
                       ),
                     ))
               else
-                SizedBox(
-                  height: 400,
-                  child: Center(
-                      child: Lottie.asset('assets/lottie/animation-1.json')),
+                Column(
+                  children: [
+                    SizedBox(
+                      height: 400,
+                      child: Center(
+                          child: Lottie.asset('assets/lottie/animation-1.json')),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width - 30,
+                      child: Text(
+                        "Capture an image of fruit or dish or select it from the gallery to discover the ingredients it contains.",
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ),
+                  ],
                 ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width - 30,
-                child: Text(
-                  "Capture an image of fruit or dish or select it from the gallery to discover the ingredients it contains.",
-                  style: TextStyle(fontSize: 16),
-                ),
-              ),
+
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: MarkdownBody(
