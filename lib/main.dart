@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 
 void main() {
-  Gemini.init(apiKey: 'YOUR-API-KEY');
+  Gemini.init(apiKey: 'AIzaSyAIB5CUUEVZfZk0YLq2sn1ulyTmtebFLVU');
   runApp(const MyApp());
 }
 
