@@ -1,16 +1,24 @@
-# gemini
+# Ingredients Finder - Built with Gemini AI and Flutter
 
-A new Flutter project.
+This Flutter project, **Ingredients Finder**, is designed and built for the **Gemini AI Competition**. It leverages the power of **Gemini AI** to help users find ingredients efficiently through an intuitive and user-friendly interface.
 
+## Features
+- **AI-Powered Search**: Use Gemini AI to search for ingredients quickly.
+- **Real-Time Suggestions**: Get real-time ingredient suggestions based on input.
+- **User-Friendly Interface**: Simple and intuitive UI built with Flutter.
+- **Cross-Platform Support**: Available on Android.
+  
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To get started with this project, follow the steps below:
 
-A few resources to get you started if this is your first Flutter project:
+### Prerequisites
+- [Flutter](https://flutter.dev/docs/get-started/install) (Make sure you have the latest version installed)
+- A text editor like [VS Code](https://code.visualstudio.com/) or [Android Studio](https://developer.android.com/studio)
+- An active API key for **Gemini AI** (ensure you have the appropriate API access)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/swapnilmanew/ingredients-finder.git
